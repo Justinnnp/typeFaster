@@ -1,11 +1,12 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, {} from "react";
 import "./App.css";
+import Choose from './Choose/Choose';
 
 function App() {
+
     return (
         <div className="App">
-            <h1>TypeFaster</h1>
+            <Choose/>
         </div>
     );
 }
