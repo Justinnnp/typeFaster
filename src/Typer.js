@@ -41,7 +41,7 @@ class Typer extends React.Component {
             });
         } else {
             let incorrect =
-                '<div class="red">' + text.charAt(incorrect_letter) + "</div>";
+                '<b class="red">' + text.charAt(incorrect_letter) + "</b>";
             this.setState({
                 final_text:
                     new_text +

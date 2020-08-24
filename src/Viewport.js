@@ -7,21 +7,31 @@ class Viewport extends React.Component {
 
         this.state = {
             json: null,
+            loaded: false,
         };
     }
 
     componentDidMount() {
-        fetch("https://api.mydomain.com")
+        fetch("http://localhost/TypeFaster/getStory.php")
             .then((response) => response.json())
-            .then((data) => this.setState({ data }));
+            .then((data) =>
+                this.setState({
+                    json: data.story,
+                    loaded: true,
+                })
+            );
     }
 
     render() {
-        return (
-            <div className="viewport">
-                <Typer text="This is a sample text."></Typer>
-            </div>
-        );
+        if (this.state.loaded) {
+            return (
+                <div className="viewport">
+                    <Typer text={this.state.json}></Typer>
+                </div>
+            );
+        } else {
+            return <h1>Loading...</h1>;
+        }
     }
 }
 
