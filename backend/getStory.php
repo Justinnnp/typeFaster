@@ -3,6 +3,7 @@
     $user = "root";
     $passwd = "";
     $pdo = new PDO($dsn, $user, $passwd);
+    header('Content-Type: application/json');
     
     startGame($pdo);
     
@@ -15,6 +16,7 @@
     function storiesToJson($actualJson){
         $storyJson = json_encode($actualJson);
         echo ($storyJson);
+        
 
     }
 
