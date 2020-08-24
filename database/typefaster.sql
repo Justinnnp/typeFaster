@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 aug 2020 om 12:13
+-- Gegenereerd op: 24 aug 2020 om 13:28
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.8
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `typefaster`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `highscore`
+--
+
+CREATE TABLE `highscore` (
+  `id` int(255) NOT NULL,
+  `wpm` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -56,6 +68,12 @@ INSERT INTO `stories` (`id`, `story`, `length`) VALUES
 --
 
 --
+-- Indexen voor tabel `highscore`
+--
+ALTER TABLE `highscore`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `stories`
 --
 ALTER TABLE `stories`
@@ -64,6 +82,12 @@ ALTER TABLE `stories`
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
+
+--
+-- AUTO_INCREMENT voor een tabel `highscore`
+--
+ALTER TABLE `highscore`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `stories`
